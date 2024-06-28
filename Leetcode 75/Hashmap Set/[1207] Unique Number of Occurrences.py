@@ -1,0 +1,24 @@
+class Solution(object):
+    def uniqueOccurrences(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        arr.sort()
+        unique_set = set()
+
+        count = 1
+        for i in range(1, len(arr)):
+            if arr[i] == arr[i - 1]:
+                count += 1
+            else:
+                if count in unique_set:
+                    return False
+
+                unique_set.add(count)
+                count = 1
+
+        if count in unique_set:
+            return False
+
+        return True
