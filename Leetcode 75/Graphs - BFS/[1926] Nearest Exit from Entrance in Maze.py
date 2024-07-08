@@ -7,7 +7,7 @@ class Solution(object):
         """
         rows, cols = len(maze), len(maze[0])
         deq = deque()
-        deq.append([entr[0], entr[1], -1])
+        deq.append([entrance[0], entrance[1], -1])
         
         while deq:
             r, c, dist = deq.popleft()
